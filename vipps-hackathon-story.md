@@ -1,6 +1,6 @@
 ##Vipps for Streamlabs
 
-Hello, my name is Asbjørn Riddervold and I’m a student that work at Vipps AS in Norway.
+Hello, my name is Asbjørn Riddervold and I’m a IT student that work at Vipps AS in Norway.
 Vipps is a mobile payment solution which is used by 3.3 million Norwegians (we are currently 5.2 million Norwegians living in Norway).
 With Vipps, you can “vippse” your friend 100 Norwegian kroner for the dinner he paid for (person to person, "P2P") or split the
 bill easily among your travel companions. You can also pay with Vipps when buying a new microwave on the internet (business to consumer, B2C). 
@@ -8,9 +8,9 @@ bill easily among your travel companions. You can also pay with Vipps when buyin
 In March 2019 Vipps arranged a two-day internal hackathon where all employees
 could participate. There were several categories, and in true hackathon spirit, imagination was the limit.
 
-Wednesday morning, we formed teams and shared our ideas. My team had earlier discussed how Norwegian streamers
-had accepted donations through Vipps. The streamers had used P2P to receive donations by showing their
-personal phone number in the stream, which for several reasons is not an optimal:
+Wednesday morning, we formed teams and shared our ideas. My team consisted of me, Henrik Wille and Håkon Strøm Lie. 
+We had earlier discussed how Norwegian streamers had accepted donations through Vipps and how the different user stories were. 
+The streamers had used P2P to receive donations by showing their personal phone number in the stream, which for several reasons is not an optimal:
 
 * P2P is initiated by sending to the streamers private phone number, which mean
 that the streamers had to expose their personal phone number to receive donations.
@@ -26,7 +26,7 @@ Norwegian’s love Vipps! It is the de-facto standard for P2P payments. If Vipps
 Norwegians choose it pretty much all of the time.
 
 Anyway, my team quite early agreed on creating an integration between Vipps and Streamlabs. We wanted
-to make it possible to donate money to Norwegian streamers, and to trigger events in the stream by the end of the Hackathon.
+to make it possible to donate money to Norwegian streamers through Vipps, and to trigger events in the stream by the end of the Hackathon.
 Exciting, but also a lot of research was a head of us. 
 
 We decided to just focus on the key features in our solution. Just the minimal to get something up and go. So,
