@@ -50,8 +50,6 @@ be displayed, and name to be showed as sender. This data is then submitted to
 the backend, which replies with a redirect URL to the Vipps landing page.
 
 We hosted both the backend and frontend on [Heroku](https://www.heroku.com).
-Heroku was a pleasant experience for hosting. Both easy and cheap (free).
-
 
 ## Vipps API
 
