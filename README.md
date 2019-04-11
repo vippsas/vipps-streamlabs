@@ -9,6 +9,10 @@ Java application which integrates with the
 and
 [Streamlabs API](https://dev.streamlabs.com/reference).
 
+This was useful for us:
+* [Getting started with Spring Boot](https://spring.io/guides/gs/spring-boot/).
+* [Validating Form Input](https://spring.io/guides/gs/validating-form-input/).
+
 ## Vipps API
 
 * Get Accesstoken: [`POST:/accesstoken/get`](https://vippsas.github.io/vipps-ecom-api/#/Authorization%20Service/fetchAuthorizationTokenUsingPost)
