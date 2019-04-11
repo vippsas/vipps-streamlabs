@@ -61,18 +61,21 @@ and copied into the properties file.
 ![Twitch screenshot](images/0-streaming-view.png)
 
 This is the normal view of a stream on Twitch.
+Håkon is playing the addictive game [slither.io](http://slither.io).
 
 ## Donate button
 
 ![Twitch screenshot](images/1-donate-button.png)
 
-The Vipps donate button is shown. Streamers are free to include whatever in their channel/stream description.
+The Vipps donate button is shown.
+Streamers are free to include whatever they want in their channel/stream description.
 
 ## Landing page
 
 ![Twitch screenshot](images/2-landing-page.png)
 
 Clicking the Vipps button sends the user to this page.
+See the Vipps [design guidelines](https://github.com/vippsas/vipps-design-guidelines).
 
 ## Vipps landing page
 
