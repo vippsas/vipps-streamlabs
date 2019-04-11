@@ -85,9 +85,10 @@ and copied into the properties file.
 
 ## Coding tips
 
-Two important files:
+Three important files:
 * [`VippsService.java`](https://github.com/vippsas/vipps-streamlabs/blob/master/src/main/java/no/vipps/twitchecom/VippsService.java)
 * [`VippsController.java`](https://github.com/vippsas/vipps-streamlabs/blob/master/src/main/java/no/vipps/twitchecom/VippsController.java)
+* [`application.properties`](https://github.com/vippsas/vipps-streamlabs/blob/master/src/main/resources/application.properties)
 
 This was useful for Spring Boot:
 * [Getting started with Spring Boot](https://spring.io/guides/gs/spring-boot/).
