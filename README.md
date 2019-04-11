@@ -154,5 +154,5 @@ Our backend received successful callback which trigger "/donations" POST-request
 
 # Questions?
 
-We're always happy to help, but please not that this is not an officially supported Vipps solution.
+We're always happy to help, but please note that this is not an officially supported Vipps solution.
 [Issues](issues) and [PRs](pulls) are welcome!
