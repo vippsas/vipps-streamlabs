@@ -39,3 +39,9 @@ Streamlabs has an open API that we used. We used the specific endpoint: /donatio
 
 * Create a Vipps “donate” button that the streamer could place in their channel description or anywhere else. This button would
 trigger a Vipps payment(initiate payment) and open a landing page where the viewer fill in donation amount, text that is showed and optionally a GIF of choice.
+
+* Create a frontend where the viewer could enter amount, message and name. This data is then submitted to the backend which replies with a redirect url to the Vipps landingpage.
+
+We hosted both the backend and frontend on Heroku. Heroku was a pleasant experience for hosting. Bot easy and cheap (free). 
+
+And, surprisingly enough, everything worked perfectly on the live-demo during our presentation!  
