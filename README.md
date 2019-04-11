@@ -9,12 +9,12 @@ The hackathon team:
 * Henrik Wille ([LinkedIn](https://www.linkedin.com/in/hwille/))
 * Håkon Strøm Lie ([GitHub](https://github.com/Hakonslie), [LinkedIn](https://www.linkedin.com/in/hakonslie/))
 
-There is a write-up of this hack on [Medium](https://medium.com/@ariddervold/vipps-for-streamlabs-8133fb204f8e).
+There is a write-up of this hack on [Medium](https://medium.com/@ariddervold/vipps-for-streamlabs-8133fb204f8e) :clap:
 
 # What you need try this out
 
-* A company. This can be an [Enkeltpersonforetak](https://www.brreg.no/enkeltpersonforetak/registrere-et-enkeltpersonforetak/), which is free to and quite easy to establish. To accept donations with Vipps, Vipps is required by regulation to perform checks of [KYC](https://en.wikipedia.org/wiki/Know_your_customer), [AML](https://en.wikipedia.org/wiki/Money_laundering), etc, and this requires a company.
-* "Vipps på Nett", the eCommerce solution, which can be ordered [here](https://www.vipps.no/bedrift/vipps-pa-nett). Select "direct integration". You will need [BankID](https://www.bankid.no/privat/) to sign the order.
+* A company. This can be an [Enkeltpersonforetak](https://www.brreg.no/enkeltpersonforetak/registrere-et-enkeltpersonforetak/), which is free and  easy to establish. Vipps is required by regulation to perform checks of all customers ([KYC](https://en.wikipedia.org/wiki/Know_your_customer), [AML](https://en.wikipedia.org/wiki/Money_laundering), etc), and this requires a company.
+* "Vipps på Nett", the Vipps eCommerce solution, which can be ordered [here](https://www.vipps.no/bedrift/vipps-pa-nett). Select "direct integration". You will need [BankID](https://www.bankid.no/privat/) to sign the order. The API keys for the test environment should arrive shortly, and the API keys for production in a few days (after KYC, AML, etc).
 
 ## Coding
 
@@ -27,36 +27,49 @@ Java application which integrates with the
 and
 [Streamlabs API](https://dev.streamlabs.com/reference).
 
-This was useful for us:
+Two important files:
+* [`VippsService.java](https://github.com/vippsas/vipps-streamlabs/blob/master/src/main/java/no/vipps/twitchecom/VippsService.java)
+* [`VippsController.java`](https://github.com/vippsas/vipps-streamlabs/blob/master/src/main/java/no/vipps/twitchecom/VippsController.java)
+
+This was useful for Spring Boot:
 * [Getting started with Spring Boot](https://spring.io/guides/gs/spring-boot/).
 * [Validating Form Input](https://spring.io/guides/gs/validating-form-input/).
 
 ## Vipps API
 
+This hack uses the [Vipps eCom v2 API](https://github.com/vippsas/vipps-ecom-api) is used,
+and all documentation, Swagger files, Postman collections, etc is available on GitHub.
+
 * Get access token: [`POST:/accesstoken/get`](https://vippsas.github.io/vipps-ecom-api/#/Authorization%20Service/fetchAuthorizationTokenUsingPost)
 * Initiate payment: [`POST:/ecomm/v2/payments`](https://vippsas.github.io/vipps-ecom-api/#/Vipps%20eCom%20API/initiatePaymentV3UsingPOST)
-* Listen for callback on a successful, or unsuccesful, payment in the Vipps app ([`POST:[callbackPrefix]/v2/payments/{orderId}`](https://vippsas.github.io/vipps-ecom-api/#/Endpoints%20required%20by%20Vipps%20from%20the%20merchant/transactionUpdateCallbackForRegularPaymentUsingPOST)).
+* Listen for callback on a successful, or unsuccessful, payment in the Vipps app ([`POST:[callbackPrefix]/v2/payments/{orderId}`](https://vippsas.github.io/vipps-ecom-api/#/Endpoints%20required%20by%20Vipps%20from%20the%20merchant/transactionUpdateCallbackForRegularPaymentUsingPOST)).
 
 **Please note**: [Refunds](https://vippsas.github.io/vipps-ecom-api/#/Vipps%20eCom%20API/refundPaymentUsingPOST),
 [Get Payment Details](https://vippsas.github.io/vipps-ecom-api/#/Vipps%20eCom%20API/getPaymentDetailsUsingGET)
 and more is not implemented.
 This is just _bare minimum_ implementation for the hackathon.
 We make the code available here, in case it may be useful for others.
-[Issues](issues) and [PRs](pulls) are welcome!
 
 ## Streamlabs API
 
-* If a callback from Vipps API was successful, it triggered a POST request to
+The Streamlabs API is very well documented on [dev.streamlabs.com](https://dev.streamlabs.com).
+For this hack, we use it this way:
+
+If a callback from Vipps API was successful, it triggered a POST request to
 the Streamlabs [`POST:/donations`](https://dev.streamlabs.com/reference#donations-1)
 endpoint. The streamer then has to configure in the admin panel how the donation will be
 shown in the stream.
 
 In the StreamlabService class there is a _hardcoded_ accesstoken passed from
-`application.properties`. Streamlabs informed us that this had no expiry date,
+[`application.properties`](https://github.com/vippsas/vipps-streamlabs/blob/master/src/main/resources/application.properties).
+Streamlabs informed us that this had no expiry date,
 so we got the access token when testing in [Postman](https://www.getpostman.com)
 and copied into the properties file.
 
 # Screenshots
+
+The following screenshots show the complete flow, from displaying the donate button,
+via the Vipps payment, to showing the donation message on the stream.
 
 ## Streaming view
 
