@@ -9,6 +9,8 @@ The hackathon team:
 * Henrik Wille ([LinkedIn](https://www.linkedin.com/in/hwille/))
 * Håkon Strøm Lie ([GitHub](https://github.com/Hakonslie), [LinkedIn](https://www.linkedin.com/in/hakonslie/))
 
+There is a write-up of this hack on [Medium](https://medium.com/@ariddervold/vipps-for-streamlabs-8133fb204f8e?source=friends_link&sk=994c991c39c547143d4ab186732f80c8).
+
 # What you need try this out
 
 * A company. This can be an [Enkeltpersonforetak](https://www.brreg.no/enkeltpersonforetak/registrere-et-enkeltpersonforetak/), which is free to and quite easy to establish. To accept donations with Vipps, Vipps is required by regulation to perform checks of [KYC](https://en.wikipedia.org/wiki/Know_your_customer), [AML](https://en.wikipedia.org/wiki/Money_laundering), etc, and this requires a company.
