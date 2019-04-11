@@ -9,7 +9,7 @@ The hackathon team:
 * Henrik Wille ([LinkedIn](https://www.linkedin.com/in/hwille/))
 * Håkon Strøm Lie ([GitHub](https://github.com/Hakonslie), [LinkedIn](https://www.linkedin.com/in/hakonslie/))
 
-There is a write-up of this hack on [Medium](https://medium.com/@ariddervold/vipps-for-streamlabs-8133fb204f8e?source=friends_link&sk=994c991c39c547143d4ab186732f80c8).
+There is a write-up of this hack on [Medium](https://medium.com/@ariddervold/vipps-for-streamlabs-8133fb204f8e).
 
 # What you need try this out
 
