@@ -14,7 +14,7 @@ There is a write-up of this hack on [Medium](https://medium.com/@ariddervold/vip
 # What you need try this out
 
 * A company. This can be an [Enkeltpersonforetak](https://www.brreg.no/enkeltpersonforetak/registrere-et-enkeltpersonforetak/), which is free and  easy to establish. Vipps is required by regulation to perform checks of all customers ([KYC](https://en.wikipedia.org/wiki/Know_your_customer), [AML](https://en.wikipedia.org/wiki/Money_laundering), etc), and this requires a company.
-* "Vipps på Nett", the Vipps eCommerce solution, which can be ordered [here](https://www.vipps.no/bedrift/vipps-pa-nett). Select "direct integration". You will need [BankID](https://www.bankid.no/privat/) to sign the order. The API keys for the test environment should arrive shortly, and the API keys for production in a few days (after KYC, AML, etc).
+* [Vipps på Nett](https://www.vipps.no/bedrift/vipps-pa-nett/), the Vipps eCommerce solution, which can be ordered [here](https://www.vipps.no/bedrift/vipps-pa-nett). Select "direct integration". You will need [BankID](https://www.bankid.no/privat/) to sign the order. The API keys for the test environment should arrive shortly, and the API keys for production in a few days (after KYC, AML, etc).
 
 ## Coding
 
