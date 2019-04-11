@@ -11,8 +11,7 @@ import java.util.Date;
 @Service
 public class StreamlabService {
 
-    @Value("${STREAMLABS_API_BASE}")
-    private String STREAMLABS_API_BASE;
+    private String STREAMLABS_API_BASE = "https://www.streamlabs.com/api/v1.0";
 
     @Value("{$STREAMLABS_CLIENT_ID}")
     private String STREAMLABS_CLIENT_ID;
