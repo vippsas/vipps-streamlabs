@@ -62,7 +62,7 @@ Clicking the button sends the user to this page.
 
 ## Vipps landing page
 
-![Twitch screenshot](images/3-vips-landing-page.png)
+![Twitch screenshot](images/3-vipps-landing-page.png)
 
 The standard Vipps landing poage, where the user enters his/her phone number
 and confirms the donation.
@@ -78,7 +78,7 @@ and text ("You are really good with streaming and such"), and presses "Send".
 
 ![Vipps screenshot](images/4-2-vipps-app-confirmation.png)
 
-The green "Betalt" bubble shows that the payment was successful. 
+The green "Betalt" bubble shows that the payment was successful.
 
 ## Success
 
