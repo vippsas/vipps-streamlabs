@@ -69,11 +69,16 @@ and confirms the donation.
 
 ## Payment request in the Vipps app
 
-![Twitch screenshot](images/4-1-vipps-app-request.png)
+![Vipps screenshot](images/4-1-vipps-app-request.png)
+
+The payment request in the Vipps app. The user enters amount (10 kr)
+and text ("You are really good with streaming and such"), and presses "Send".
 
 ## Payment confirmation in the Vipps app
 
-![Twitch screenshot](images/4-2-vipps-app-confirmation.png)
+![Vipps screenshot](images/4-2-vipps-app-confirmation.png)
+
+The green "Betalt" bubble shows that the payment was successful. 
 
 ## Success
 
