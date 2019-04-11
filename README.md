@@ -57,25 +57,25 @@ and copied into the properties file.
 
 ![Twitch screenshot](images/0-streaming-view.png)
 
-This is the normal view of a stream.
+This is the normal view of a stream on Twitch.
 
 ## Donate button
 
 ![Twitch screenshot](images/1-donate-button.png)
 
-The Vipps donate button is shown.
+The Vipps donate button is shown. Streamers are free to include whatever in their channel/stream description.
 
 ## Landing page
 
 ![Twitch screenshot](images/2-landing-page.png)
 
-Clicking the button sends the user to this page.
+Clicking the Vipps button sends the user to this page.
 
 ## Vipps landing page
 
 ![Twitch screenshot](images/3-vipps-landing-page.png)
 
-The standard Vipps landing poage, where the user enters his/her phone number
+The standard Vipps landing page, where the user enters his/her phone number
 and confirms the donation.
 
 ## Payment request in the Vipps app
@@ -102,6 +102,7 @@ Confirmation of the successful Vipps donation.
 ![Twitch screenshot](images/5-streamlabs-notification.png)
 
 Donation shown on the stream.
+Our backend received successful callback which trigger "/donations" POST-request to Streamlabs.
 
 # Questions?
 
