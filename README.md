@@ -1,5 +1,7 @@
 # Vipps for Streamlabs
 
+![Twitch screenshot](images/1-donate-button.png)
+
 A quick hack from an internal Vipps hackathon. No guarantees whatsoever!
 
 This is a
@@ -37,3 +39,55 @@ In the StreamlabService class there is a _hardcoded_ accesstoken passed from
 `application.properties`. Streamlabs informed us that this had no expiry date,
 so we got the access token when testing in [Postman](https://www.getpostman.com)
 and copied into the properties file.
+
+# Screenshots
+
+## Streaming view
+
+![Twitch screenshot](images/0-streaming-view.png)
+
+This is the normal view of a stream.
+
+## Donate button
+
+![Twitch screenshot](images/1-donate-button.png)
+
+The Vipps donate button is shown.
+
+## Landing page
+
+![Twitch screenshot](images/2-landing-page.png)
+
+Clicking the button sends the user to this page.
+
+## Vipps landing page
+
+![Twitch screenshot](images/3-vips-landing-page.png)
+
+The standard Vipps landing poage, where the user enters his/her phone number
+and confirms the donation.
+
+## Payment request in the Vipps app
+
+![Twitch screenshot](images/4-1-vipps-app-request.png)
+
+## Payment confirmation in the Vipps app
+
+![Twitch screenshot](images/4-2-vipps-app-confirmation.png)
+
+## Success
+
+![Twitch screenshot](images/4-3-success.png)
+
+Confirmation of the successful Vipps donation.
+
+## Donation shown on stream
+
+![Twitch screenshot](images/5-streamlabs-notification.png)
+
+Donation shown on the stream.
+
+# Questions?
+
+We're always happy to help, but please not that this is not an officially supported Vipps solution.
+[Issues](issues) and [PRs](pulls) are welcome!
