@@ -35,6 +35,30 @@ This was useful for Spring Boot:
 * [Getting started with Spring Boot](https://spring.io/guides/gs/spring-boot/).
 * [Validating Form Input](https://spring.io/guides/gs/validating-form-input/).
 
+# What we did
+
+We decided to just focus on the key features in our solution. Just the minimal
+to get something up and running:
+
+* Create a backend that is integrated with [Vipps’ API for B2C/eCom payments](https://github.com/vippsas/vipps-ecom-api).
+This included payment initiation and listening for callbacks from
+successful/unsuccessful payments attempts. The backend also had to communicate
+with Streamlabs. Streamlabs is a streaming software that allows you to broadcast
+your video to Twitch and other services. Streamlabs has an open API that
+we used. We used the specific endpoint: [`POST:/donations`](https://dev.streamlabs.com/reference#donations-1).
+
+* Create a Vipps “donate” button that the streamer could place in their channel
+description or somewhere else. This button would trigger a Vipps payment
+(payment initiation) and open a landing page where the viewer fills in a donation amount,
+a text that is showed, and optionally a GIF of choice.
+
+* Create a frontend where the viewer could enter amount to donate, message to
+be displayed, and name to be showed as sender. This data is then submitted to
+the backend, which replies with a redirect URL to the Vipps landing page.
+
+We hosted both the backend and frontend on [Heroku](https://www.heroku.com).
+Heroku was a pleasant experience for hosting. Both easy and cheap (free).
+
 ## Vipps API
 
 This hack uses the [Vipps eCom v2 API](https://github.com/vippsas/vipps-ecom-api) is used,
