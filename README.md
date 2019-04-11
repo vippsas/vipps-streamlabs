@@ -1,6 +1,6 @@
 # Vipps for Streamlabs
 
-A quick hack from an internal Vipps hackathon. No guarantees whatsoever.
+A quick hack from an internal Vipps hackathon. No guarantees whatsoever!
 
 This is a
 [Spring Boot](https://spring.io/projects/spring-boot)
