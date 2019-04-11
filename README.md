@@ -67,9 +67,17 @@ Clicking the button sends the user to this page.
 The standard Vipps landing poage, where the user enters his/her phone number
 and confirms the donation.
 
+## Payment request in the Vipps app
+
+![Twitch screenshot](images/4-1-vipps-app-request.png)
+
+## Payment confirmation in the Vipps app
+
+![Twitch screenshot](images/4-2-vipps-app-confirmation.png)
+
 ## Success
 
-![Twitch screenshot](images/4-success.png)
+![Twitch screenshot](images/4-3-success.png)
 
 Confirmation of the successful Vipps donation.
 
