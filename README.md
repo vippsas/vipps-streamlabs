@@ -2,7 +2,7 @@
 
 ![Twitch screenshot](images/1-donate-button.png)
 
-A quick hack from an internal Vipps hackathon. No guarantees whatsoever!
+:warning: This is a quick hack from an internal Vipps hackathon. No guarantees whatsoever! :boom: :fire: :shit:
 
 # What you need
 
