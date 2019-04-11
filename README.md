@@ -2,7 +2,8 @@
 
 ![Twitch screenshot](images/1-donate-button.png)
 
-:warning: This is a quick hack from an internal Vipps hackathon. No guarantees whatsoever! :boom: :fire: :shit:
+:warning: This is a quick hack from an [internal Vipps hackathon](https://www.linkedin.com/feed/update/urn:li:activity:6517261843617050624/).
+No guarantees whatsoever! :boom: :fire: :shit:
 
 The hackathon team:
 * Asbjørn Riddervold ([GitHub](https://github.com/aridder), [LinkedIn](https://www.linkedin.com/in/ariddervold/))
