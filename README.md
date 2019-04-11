@@ -27,14 +27,6 @@ Java application which integrates with the
 and
 [Streamlabs API](https://dev.streamlabs.com/reference).
 
-Two important files:
-* [`VippsService.java`](https://github.com/vippsas/vipps-streamlabs/blob/master/src/main/java/no/vipps/twitchecom/VippsService.java)
-* [`VippsController.java`](https://github.com/vippsas/vipps-streamlabs/blob/master/src/main/java/no/vipps/twitchecom/VippsController.java)
-
-This was useful for Spring Boot:
-* [Getting started with Spring Boot](https://spring.io/guides/gs/spring-boot/).
-* [Validating Form Input](https://spring.io/guides/gs/validating-form-input/).
-
 # What we did
 
 We decided to just focus on the key features in our solution. Just the minimal
@@ -58,6 +50,7 @@ the backend, which replies with a redirect URL to the Vipps landing page.
 
 We hosted both the backend and frontend on [Heroku](https://www.heroku.com).
 Heroku was a pleasant experience for hosting. Both easy and cheap (free).
+
 
 ## Vipps API
 
@@ -89,6 +82,16 @@ In the StreamlabService class there is a _hardcoded_ accesstoken passed from
 Streamlabs informed us that this had no expiry date,
 so we got the access token when testing in [Postman](https://www.getpostman.com)
 and copied into the properties file.
+
+## Coding tips
+
+Two important files:
+* [`VippsService.java`](https://github.com/vippsas/vipps-streamlabs/blob/master/src/main/java/no/vipps/twitchecom/VippsService.java)
+* [`VippsController.java`](https://github.com/vippsas/vipps-streamlabs/blob/master/src/main/java/no/vipps/twitchecom/VippsController.java)
+
+This was useful for Spring Boot:
+* [Getting started with Spring Boot](https://spring.io/guides/gs/spring-boot/).
+* [Validating Form Input](https://spring.io/guides/gs/validating-form-input/).
 
 # Screenshots
 
