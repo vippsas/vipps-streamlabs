@@ -4,6 +4,17 @@
 
 A quick hack from an internal Vipps hackathon. No guarantees whatsoever!
 
+# What you need
+
+You need a few tings to try this out:
+
+* A company. This can be an [Enkeltpersonforetak](https://www.brreg.no/enkeltpersonforetak/registrere-et-enkeltpersonforetak/), which is free to and quite easy to establish. To accept donations with Vipps, Vipps is required by regulation to perform checks of [KYC](https://en.wikipedia.org/wiki/Know_your_customer), [AML](https://en.wikipedia.org/wiki/Money_laundering), etc, and this requires a company.
+* "Vipps på Nett", the eCommerce solution, which can be ordered [here](https://www.vipps.no/bedrift/vipps-pa-nett). Select "direct integration". You will need [BankID](https://www.bankid.no/privat/) to sign the order.
+
+## Coding
+
+You also need to be able to code a little bit, or get help from someone who can.
+
 This is a
 [Spring Boot](https://spring.io/projects/spring-boot)
 Java application which integrates with the
