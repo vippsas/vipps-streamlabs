@@ -28,7 +28,7 @@ and
 [Streamlabs API](https://dev.streamlabs.com/reference).
 
 Two important files:
-* [`VippsService.java](https://github.com/vippsas/vipps-streamlabs/blob/master/src/main/java/no/vipps/twitchecom/VippsService.java)
+* [`VippsService.java`](https://github.com/vippsas/vipps-streamlabs/blob/master/src/main/java/no/vipps/twitchecom/VippsService.java)
 * [`VippsController.java`](https://github.com/vippsas/vipps-streamlabs/blob/master/src/main/java/no/vipps/twitchecom/VippsController.java)
 
 This was useful for Spring Boot:
