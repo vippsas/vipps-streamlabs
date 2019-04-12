@@ -1,0 +1,23 @@
+input {
+    text-align: center;
+    width: 50% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+.grid-container {
+    margin-top: 2rem !important;
+    text-align: center !important;
+}
+
+.bannerFallback{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+@font-face {
+    font-family: "VippsHeader";
+    src: url("./VippsDisplay-Regular-Web-172867698929d98b8878b03227f236bb.woff2") format('woff2');
+}
+h2 {
+    font-weight: 100 !important;
+}
