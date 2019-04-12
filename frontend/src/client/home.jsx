@@ -2,6 +2,10 @@ import React from "react";
 
 export class Home extends React.Component {
 
+
+    // Set server url to backend!
+    SERVER_URL = "HTTPS://YOURSERVER.COM";
+
     constructor(props) {
         super(props);
         this.state = ({
@@ -28,7 +32,7 @@ export class Home extends React.Component {
 
         this.fetchDeepLink().then( responseURL => {
                 this.setState({deeplink: responseURL.url, waiting: true});
-        }
+            }
         );
     };
     renderRedirect = () => {
@@ -51,34 +55,36 @@ export class Home extends React.Component {
     };
 
 
-   fetchDeepLink = async () => {
-         let data = JSON.stringify({
-            "senderName": this.state.donationFrom,
-            "amount": parseInt(this.state.donationAmount),
-            "transactionText": this.state.donationMessage
-        });
+    fetchDeepLink = async () => {
+        if(this.SERVER_URL === "") console.log("No server URL set in client/home.jsx");
+        else {
+            let data = JSON.stringify({
+                "senderName": this.state.donationFrom,
+                "amount": parseInt(this.state.donationAmount),
+                "transactionText": this.state.donationMessage
+            });
 
-        return await fetch('http://cryptic-beyond-25044.herokuapp.com/initiatePayment', {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "cache-control": "no-cache",
-                // "Content-Type": "application/x-www-form-urlencoded",
-            },
-            body: data, // body data type must match "Content-Type" header
-        }).then(response => response.json());
+            return await fetch(this.SERVER_URL + '/initiatePayment', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "cache-control": "no-cache",
+                    // "Content-Type": "application/x-www-form-urlencoded",
+                },
+                body: data, // body data type must match "Content-Type" header
+            }).then(response => response.json());
 
-    };
+        }};
 
 
     render() {
         return (
             <div className="body">
                 {!this.state.waiting &&
-                    <div className="frontNotWaiting">
-                        <main>
-                            <article>
-                                <form onSubmit={this.onFormSubmit}>
+                <div className="frontNotWaiting">
+                    <main>
+                        <article>
+                            <form onSubmit={this.onFormSubmit}>
                                 <div className="grid-container">
                                     <div className="grid-x grid-padding-x grid-margin-x margin-top-s">
                                         <div className="cell small-12 medium-12 text-center align-self-middle">
@@ -87,33 +93,33 @@ export class Home extends React.Component {
                                     </div>
                                 </div>
                                 <div className="grid-container">
-                                            <div className="rich-text"><h2>Hva heter du?</h2>
-                                            </div>
-                                            <div className="cell">
-                                                <input type="text" placeholder="navn" onChange={this.onNameChange} />
-                                            </div>
-                                            <div className="rich-text"><h2>Hvor mye vil du donere?</h2>
-                                            </div>
-                                            <div className="cell">
-                                                <input type="text"placeholder="...kr" onChange={this.onAmountChange} />
-                                            </div>
-                                            <div className="cell">
-                                                    <h2>Hva vil du si?</h2>
-                                                <input type="text" placeholder="Si noe trivelig!" onChange={this.onTextChange} />
-                                            </div>
-                                        <input type="submit" className="button primary" value="Send" />
+                                    <div className="rich-text"><h2>Hva heter du?</h2>
+                                    </div>
+                                    <div className="cell">
+                                        <input type="text" placeholder="navn" onChange={this.onNameChange} />
+                                    </div>
+                                    <div className="rich-text"><h2>Hvor mye vil du donere?</h2>
+                                    </div>
+                                    <div className="cell">
+                                        <input type="text"placeholder="...kr" onChange={this.onAmountChange} />
+                                    </div>
+                                    <div className="cell">
+                                        <h2>Hva vil du si?</h2>
+                                        <input type="text" placeholder="Si noe trivelig!" onChange={this.onTextChange} />
+                                    </div>
+                                    <input type="submit" className="button primary" value="Send" />
                                 </div>
                             </form>
-                            </article>
+                        </article>
 
-                        </main>
-                    </div>
+                    </main>
+                </div>
                 }
                 {this.state.waiting &&
-                    <div className="frontWaiting">
-                            redirecting...
-                        {this.renderRedirect()}
-                    </div>
+                <div className="frontWaiting">
+                    redirecting...
+                    {this.renderRedirect()}
+                </div>
                 }
 
             </div>
