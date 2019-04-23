@@ -77,7 +77,7 @@ endpoint. The streamer then has to configure in the admin panel how the donation
 shown in the stream.
 
 In the StreamlabService class there is a _hardcoded_ accesstoken passed from
-[`application.properties`](https://github.com/vippsas/vipps-streamlabs/blob/master/src/main/resources/application.properties).
+[`application.properties`](https://github.com/vippsas/vipps-streamlabs/blob/master/backend/src/main/resources/application.properties).
 Streamlabs informed us that this had no expiry date,
 so we got the access token when testing in [Postman](https://www.getpostman.com)
 and copied into the properties file.
