@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
-import {FallBack} from "./fallBack";
+import {Fallback} from "./fallback";
 import {Home} from "./home";
 
 const notFound = () => {
@@ -21,8 +21,8 @@ const App = ()  => {
         <BrowserRouter>
             <div>
                     <Switch>
-                        <Route exact path="/fallBack" component={FallBack}/>
-                        <Route exact path="/:streamer" component={Home}/>
+                        <Route path="/fallback/:orderId" component={Fallback}/>
+                        <Route exact path="/" component={Home}/>
                         <Route component={notFound}/>
                     </Switch>
             </div>

@@ -49,4 +49,13 @@ public class InitiatePaymentRequestDTO {
     public void setTransactionDTO(TransactionDTO transactionDTO) {
         this.transactionDTO = transactionDTO;
     }
+
+    @Override
+    public String toString() {
+        return "InitiatePaymentRequestDTO{" +
+                "merchantInfoDTO=" + merchantInfoDTO +
+                ", customerInfoDTO=" + customerInfoDTO +
+                ", transactionDTO=" + transactionDTO +
+                '}';
+    }
 }

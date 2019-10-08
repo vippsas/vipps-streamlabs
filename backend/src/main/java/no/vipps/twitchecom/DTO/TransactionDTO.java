@@ -37,4 +37,13 @@ public class TransactionDTO {
     public void setTransactionText(String transactionText) {
         this.transactionText = transactionText;
     }
+
+    @Override
+    public String toString() {
+        return "TransactionDTO{" +
+                "orderId='" + orderId + '\'' +
+                ", amount='" + amount + '\'' +
+                ", transactionText='" + transactionText + '\'' +
+                '}';
+    }
 }
