@@ -1,12 +1,171 @@
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+  html {
+      font-size: 16px;
+    }
+    
+  }
+  
+  /* 
+    ##Device = Laptops, Desktops
+    ##Screen = B/w 1025px to 1280px
+  */
+  
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    html {
+        font-size: 16px;
+    }
+    
+  }
+  
+  /* 
+    ##Device = Tablets, Ipads (portrait)
+    ##Screen = B/w 768px to 1024px
+  */
+  
+  @media (max-width: 1024px) {
+    html {
+        font-size: 32px;
+    }
+    
+  }
+  
+  /* 
+    ##Device = Tablets, Ipads (landscape)
+    ##Screen = B/w 768px to 1024px
+  */
+  
+  @media (max-width: 1024px) and (orientation: landscape) {
+    html {
+        font-size: 24px;
+    }
+    
+  }
+
 input {
     text-align: center;
-    width: 50% !important;
+    width: 100% !important;
     margin-left: auto !important;
     margin-right: auto !important;
+}
+
+p {
+    margin-bottom: 0 !important;
 }
 .grid-container {
     margin-top: 2rem !important;
     text-align: center !important;
+}
+
+.profile-image {
+    height: 20rem;
+}
+
+.amount-div {
+    width: 20rem;
+    height: 10rem;
+    background-color: #49367E;
+    border-radius: 10px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.amount-div-amount-concat-with-usd-suffix {
+    font-family: Vipps;
+    margin-top: 10%;
+    top: 25%;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    height: 3rem;
+    left: calc(50% - 15rem/2);
+    /* :green_apple: General/Display */
+    font-size: 2.5rem;
+    line-height: 3rem;
+}
+
+.amount-paragraph-usd-suffix {
+    font-family: Vipps;
+    width: 15rem;
+    height: 3rem;
+    padding-right: 28%;
+    left: calc(50% - 15rem/2);
+    /* :green_apple: General/Display */
+    font-size: 2.5rem;
+    line-height: 3rem;
+    /* identical to box height */
+    text-align: left;
+    letter-spacing: -1.2px;
+    /* 2. Shades/White */
+    color: white;
+}
+
+
+input:focus.amount-input-usd {
+    background-color: #49367E;
+    box-shadow: none;
+    border: none;
+}
+
+input.amount-input-usd {
+    font-family: Vipps;
+    line-height: inherit;
+    color: white;
+    background-color: #49367E;
+    box-shadow: none;
+    border: none;
+    font-size: 2.5rem;
+    text-align: right;
+    height: 3rem;
+    padding: 0 !important;
+    padding-right: 10px !important;
+}
+
+input.name-input {
+    text-align: left;
+    font-family: Vipps;
+    margin-bottom: 0;
+}
+
+textarea.message-input {
+    font-family: Vipps;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+input.button-submit {
+    font-family: Vipps;
+    background-color: #ff5b24;
+    color: white;
+    height: 3rem;
+    border: none;
+    box-shadow: 0px 1px 2px rgba(22, 18, 37, 0.07);
+    border-radius: 70px;
+}
+
+.amount-paragraph-in-kroner {
+    font-family: Vipps;
+    width: 15rem;
+    height: 2rem;
+    left: calc(50% - 15rem/2);
+    /* :green_apple: General/Display */
+    font-size: 1rem;
+    line-height: 1.25rem;
+    /* identical to box height */
+    text-align: center;
+    letter-spacing: -1.2px;
+    /* 2. Shades/White */
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
 }
 
 .bannerFallback{
@@ -14,9 +173,117 @@ input {
     margin-right: auto;
     display: block;
 }
+.bannerHeaderVipps {
+    font-family: VippsHeader, Consolas, Liberation Mono, Courier, monospace;
+    font-size: 200%;
+    color: #ff5b24;
+    text-align: center;
+}
+
+.name-div {
+    width: 20rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.message-div {
+    width: 20rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.submit-div {
+    width: 20rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+}
+
+.small-info {
+    margin-top: -1.5em;
+    font-size: 65%;
+    padding-bottom: 4em;
+}
+.fallbackInfo {
+    display: block;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.statusImage {
+    margin-top: 5em;
+    margin-left: auto;
+    margin-right: auto;
+    display: block !important;
+}
+
+
+.error-message-minimum-amount-visible {
+    font-family: Vipps, Consolas, Liberation Mono, Courier, monospace;
+    font-size: 12px;
+    color: #FF1010;
+    text-align: right;
+    top: 0;
+}
+
+.error-message-minimum-amount-not-visible {
+    font-family: Vipps, Consolas, Liberation Mono, Courier, monospace;
+    font-size: 12px;
+    opacity: 0;
+    text-align: right;
+    top: 0;
+}
+
+
+.error-message-name-visible {
+    font-family: Vipps, Consolas, Liberation Mono, Courier, monospace;
+    font-size: 12px;
+    color: #FF1010;
+    text-align: right;
+    top: 0;
+}
+
+.error-message-name-not-visible {
+    font-family: Vipps, Consolas, Liberation Mono, Courier, monospace;
+    font-size: 12px;
+    opacity: 0;
+    color: #FF1010;
+    text-align: right;
+    top: 0;
+}
+
+
+.error-message-message-visible {
+    font-family: Vipps, Consolas, Liberation Mono, Courier, monospace;
+    font-size: 12px;
+    color: #FF1010;
+    text-align: right;
+    top: 0;
+}
+
+.error-message-message-not-visible {
+    font-family: Vipps, Consolas, Liberation Mono, Courier, monospace;
+    font-size: 12px;
+    opacity: 0;
+    color: #FF1010;
+    text-align: right;
+    top: 0;
+}
+
+.profile-image-fallback {
+    max-height: 480px;
+    max-width: 480px;
+    margin-bottom: 10%;
+}
+
 @font-face {
     font-family: "VippsHeader";
-    src: url("./VippsDisplay-Regular-Web-172867698929d98b8878b03227f236bb.woff2") format('woff2');
+    src: url("VippsText-Bold-Web.woff2") format('woff2');
+}
+
+@font-face {
+    font-family: "Vipps";
+    src: url("VippsText-Regular-Web.woff") format("woff");
 }
 h2 {
     font-weight: 100 !important;

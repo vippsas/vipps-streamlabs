@@ -1,25 +1,19 @@
 package no.vipps.twitchecom.DTO;
 
 public class InitiateRequestFromClientDTO {
-    private int amount;
+    private String amountInNOK;
+    private double amountInUSD;
     private String transactionText;
     private String senderName;
 
-    public InitiateRequestFromClientDTO(int amount, String transactionText, String senderName) {
-        this.senderName = senderName;
-        this.amount = amount;
+    public InitiateRequestFromClientDTO(String amountInNOK, double amountInUSD, String transactionText, String senderName) {
+        this.amountInNOK = amountInNOK;
+        this.amountInUSD = amountInUSD;
         this.transactionText = transactionText;
+        this.senderName = senderName;
     }
 
     public InitiateRequestFromClientDTO() {
-    }
-
-    public int getAmount() {
-        return amount;
-    }
-
-    public void setAmount(int amount) {
-        this.amount = amount;
     }
 
     public String getTransactionText() {
@@ -36,5 +30,21 @@ public class InitiateRequestFromClientDTO {
 
     public void setSenderName(String senderName) {
         this.senderName = senderName;
+    }
+
+    public String getAmountInNOK() {
+        return amountInNOK;
+    }
+
+    public void setAmountInNOK(String amountInNOK) {
+        this.amountInNOK = amountInNOK;
+    }
+
+    public double getAmountInUSD() {
+        return amountInUSD;
+    }
+
+    public void setAmountInUSD(double amountInUSD) {
+        this.amountInUSD = amountInUSD;
     }
 }
