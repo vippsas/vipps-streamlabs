@@ -2,136 +2,272 @@
 
 ![Twitch screenshot](images/1-donate-button.png)
 
-:warning: This is a quick hack from an [internal Vipps hackathon](https://www.linkedin.com/feed/update/urn:li:activity:6517261843617050624/).
-No guarantees whatsoever! :boom: :fire: :shit:
+A quick hack from an internal Vipps hackathon. No guarantees whatsoever! 
 
-The hackathon team:
-* Asbjørn Riddervold ([GitHub](https://github.com/aridder), [LinkedIn](https://www.linkedin.com/in/ariddervold/))
-* Henrik Wille ([LinkedIn](https://www.linkedin.com/in/hwille/))
-* Håkon Strøm Lie ([GitHub](https://github.com/Hakonslie), [LinkedIn](https://www.linkedin.com/in/hakonslie/))
+This hack is an integration between [Vipps](https://vipps.no) and [Streamlabs](https://streamlabs.com). 
 
-There is a write-up of this hack on [Medium](https://medium.com/@ariddervold/vipps-for-streamlabs-8133fb204f8e) :clap:
-
-# What you need try this out
-
-* A company. This can be an [Enkeltpersonforetak](https://www.brreg.no/enkeltpersonforetak/registrere-et-enkeltpersonforetak/), which is free and  easy to establish. Vipps is required by regulation to perform checks of all customers ([KYC](https://en.wikipedia.org/wiki/Know_your_customer), [AML](https://en.wikipedia.org/wiki/Money_laundering), etc), and this requires a company.
-* [Vipps på Nett](https://www.vipps.no/bedrift/vipps-pa-nett/), the Vipps eCommerce solution, which can be ordered [here](https://www.vipps.no/bedrift/vipps-pa-nett). Select "direct integration". You will need [BankID](https://www.bankid.no/privat/) to sign the order. The API keys for the test environment should arrive shortly, and the API keys for production in a few days (after KYC, AML, etc).
-
-## Coding
-
-You also need to be able to code a _little_ bit, or get help from someone who can.
 
 This is a
 [Spring Boot](https://spring.io/projects/spring-boot)
-Java application which integrates with the
+Java application 
+and 
+[React Express.js](https://reactjs.org)
+ which integrates with the
 [Vipps eCom v2 API](https://github.com/vippsas/vipps-ecom-api)
 and
 [Streamlabs API](https://dev.streamlabs.com/reference).
 
-# What we did
+This was useful for us:
+* [Getting started with Spring Boot](https://spring.io/guides/gs/spring-boot/).
+* [Getting started with React.js](https://reactjs.org/docs/getting-started.html)
+* [Getting started with Vipps](https://vipps.no/produkter-og-tjenester/bedrift/ta-betalt-paa-nett/ta-betalt-paa-nett/#kom-i-gang-med-vipps-pa-nett-category-4)
 
-We decided to just focus on the key features in our solution. Just the minimal
-to get something up and running:
+# How to run this yourself on Heroku
 
-* Create a backend that is integrated with [Vipps’ API for B2C/eCom payments](https://github.com/vippsas/vipps-ecom-api).
-This included payment initiation and listening for callbacks from
-successful/unsuccessful payments attempts. The backend also had to communicate
-with Streamlabs. Streamlabs is a streaming software that allows you to broadcast
-your video to Twitch and other services. Streamlabs has an open API that
-we used. We used the specific endpoint: [`POST:/donations`](https://dev.streamlabs.com/reference#donations-1).
+## Prerequisite
+* [Vipps På Nett](https://vippsbedrift.no/signup/vippspanett/)
+* Accesstoken for you Streamlabs account (not necessary to test the flow. if you don't have it now fill in a rubberish string when asked to)
 
-* Create a Vipps “donate” button that the streamer could place in their channel
-description or somewhere else. This button would trigger a Vipps payment
-(payment initiation) and open a landing page where the viewer fills in a donation amount,
-a text that is showed, and optionally a GIF of choice.
+## Setup Heroku
 
-* Create a frontend where the viewer could enter amount to donate, message to
-be displayed, and name to be showed as sender. This data is then submitted to
-the backend, which replies with a redirect URL to the Vipps landing page.
+1. Install Heroku CLI from https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up
 
-We hosted both the backend and frontend on [Heroku](https://www.heroku.com).
+2. Login to Heroku
+```bash
+heroku login
+```
+
+
+## Deploy code to Heroku
+1. Clone Server repository
+```bash
+git clone <repo>
+```
+
+2. Cd into repo
+```bash
+cd /vipps-streamlabs
+```
+
+3. Replace image in application with your own
+
+
+Replace stream-profile-picture.png in /frontend/public/img with your own. Height and width should be equal for best apperance
+
+4. Cd into backend folder and init git
+```bash
+~/vipps-streamlabs$ cd ../backend
+```
+
+```bash
+~/backend$ git init
+```
+
+5. Create Heroku App for server. You need to keep the url for the herokuapp for further steps
+```bash
+~/backend$ heroku create
+```
+
+This will return a url for the created app back. We need this to configure our Server. In this case http://sharp-rain-backend-921.herokuapp.com/
+
+```bash
+Creating sharp-rain-backend-921... done, stack is heroku-18
+http://sharp-rain-backend-921.herokuapp.com/ | https://git.heroku.com/sharp-rain-backend-921.git
+Git remote heroku added
+```
+
+
+6. Create a Heroko Postgres addon
+```bash
+~/backend$ heroku addons:create heroku-postgresql:hobby-dev
+```
+
+7. Cd into frontend folder and init git
+```bash
+~/backend$ cd ../frontend
+```
+```bash
+~/frontend$ git init
+```
+
+
+8. Create Heroku App for the frontend. You need to keep the url for the herokuapp for further steps
+```bash
+~/frontend$ heroku create
+```
+
+This will return a url for the created app back. We need this in later steps. In this case http://sharp-rain-frontend-812.herokuapp.com/
+
+```bash
+Creating sharp-rain-frontend-812... done, stack is heroku-18
+http://sharp-rain-frontend-812.herokuapp.com/ | https://git.heroku.com/sharp-rain-frontend-812.git
+Git remote heroku added
+```
+
+9. Set env-variables in application.yaml which is located in /backend/src/main/resources
+
+- Transaction text is what that will be shown to user when approving payment in Vipps
+
+```bash
+STREAMLABS_ACCESS_TOKEN: sZW6Hpr4FeDETTEerIKKeKorrektTAYOHzCqqbRBqGb
+STREAMLABS_CLIENT_ID: 123
+STREAMLABS_CLIENT_SECRET: 123x<t>
+VIPPS_CALLBACK_PREFIX: http://sharp-rain-backend-921.herokuapp.com/
+VIPPS_CLIENT_ID: 1cca1cae-f88c-4f09-a6fb-770b7b17a6e2
+VIPPS_CLIENT_SECRET: MmRIbkVCSzNHb0pXemdZOEhiMjA=
+VIPPS_FALLBACK_URL: http://sharp-rain-frontend-812.herokuapp.com/fallback
+VIPPS_MERCHANT_SERIAL_NUMBER: 50001
+VIPPS_OCP_APIM_SUBSCRIPTION_KEY_ACCESSTOKEN: efee30IKKEGYLDIG87faab3
+VIPPS_OCP_APIM_SUBSCRIPTION_KEY_ECOMMERCE: d85f2HEISANNSVE3616c646ccf
+TRANSACTION_TEXT: "Donasjon til Streamer"
+STREAMER_NAME: "Streamer"
+
+```
+
+10. Set SERVER_URL in frontend directory
+
+In /frontend/src/server/routes/paymentApi.js in line 5, change variable SERVER_URL to the url for backend app. In this example: http://sharp-rain-backend-921.herokuapp.com/
+
+10. Deploy both apps to Heroku
+
+Deploy Server:
+```bash
+~/backend$ git add .
+```
+
+```bash
+~/backend$ git commit -m "initial commit"
+```
+
+```bash
+~/backend$ git push heroku master
+```
+
+Cd into frontend
+
+```bash
+~/backend$ cd ../frontend
+```
+
+Deploy frontend
+
+```bash
+~/frontend$ git add .
+```
+
+```bash
+~/frontend$ git commit -m "initial commit"
+```
+
+```bash
+~/frontend$ git push heroku master
+```
+
+
+
+## Test your application
+
+When both apps is deployed succesfully, go to the frontend-url. From there you will be able to do donations.
+
+
+## Add init donate button to streamers channel description on Twith
+
+In order to let people use your application and hopefully donate, you'll need to share link to the frontend application to them. You can share a link in cleartext or choose to place a button somewhere that will take the user to your application. For example in the streamers description on Twitch.
+
+### Vipps donate button
+
+![Donate button](images/button-doner-med-vipps.png)
+
+### Screenshot from Twitch
+
+![Upload image to Twitch](images/twitch-upload-button-to-description.png)
+
+* Upload image that should be visible in the Twitch description to initiate Vipps donation
+* Change "Bilde lenker til" to your hostname / ip
+
+
+# Technical documentation
+
 
 ## Vipps API
 
-This hack uses the [Vipps eCom v2 API](https://github.com/vippsas/vipps-ecom-api) is used,
-and all documentation, Swagger files, Postman collections, etc is available on GitHub.
-
 * Get access token: [`POST:/accesstoken/get`](https://vippsas.github.io/vipps-ecom-api/#/Authorization%20Service/fetchAuthorizationTokenUsingPost)
 * Initiate payment: [`POST:/ecomm/v2/payments`](https://vippsas.github.io/vipps-ecom-api/#/Vipps%20eCom%20API/initiatePaymentV3UsingPOST)
-* Listen for callback on a successful, or unsuccessful, payment in the Vipps app ([`POST:[callbackPrefix]/v2/payments/{orderId}`](https://vippsas.github.io/vipps-ecom-api/#/Endpoints%20required%20by%20Vipps%20from%20the%20merchant/transactionUpdateCallbackForRegularPaymentUsingPOST)).
+* Listen for callback on a successful, or unsuccesful, payment in the Vipps app ([`POST:[callbackPrefix]/v2/payments/{orderId}`](https://vippsas.github.io/vipps-ecom-api/#/Endpoints%20required%20by%20Vipps%20from%20the%20merchant/transactionUpdateCallbackForRegularPaymentUsingPOST)).
 
-**Please note**: [Refunds](https://vippsas.github.io/vipps-ecom-api/#/Vipps%20eCom%20API/refundPaymentUsingPOST),
-[Get Payment Details](https://vippsas.github.io/vipps-ecom-api/#/Vipps%20eCom%20API/getPaymentDetailsUsingGET)
-and more is not implemented.
-This is just _bare minimum_ implementation for the hackathon.
+**Please note**: This is NOT made to be a reference implementation. 
+
 We make the code available here, in case it may be useful for others.
+[Issues](issues) and [PRs](pulls) are welcome!
 
 ## Streamlabs API
 
-The Streamlabs API is very well documented on [dev.streamlabs.com](https://dev.streamlabs.com).
-For this hack, we use it this way:
-
-If a callback from Vipps API was successful, it triggered a POST request to
+* If a callback from Vipps API was successful, it triggered a POST request to
 the Streamlabs [`POST:/donations`](https://dev.streamlabs.com/reference#donations-1)
 endpoint. The streamer then has to configure in the admin panel how the donation will be
 shown in the stream.
 
-In the StreamlabService class there is a _hardcoded_ accesstoken passed from
-[`application.properties`](https://github.com/vippsas/vipps-streamlabs/blob/master/backend/src/main/resources/application.properties).
-Streamlabs informed us that this had no expiry date,
-so we got the access token when testing in [Postman](https://www.getpostman.com)
-and copied into the properties file.
+## Flow
 
-## Coding tips
+### Actors:
 
-Three important files:
-* [`VippsService.java`](https://github.com/vippsas/vipps-streamlabs/blob/master/src/main/java/no/vipps/twitchecom/VippsService.java)
-* [`VippsController.java`](https://github.com/vippsas/vipps-streamlabs/blob/master/src/main/java/no/vipps/twitchecom/VippsController.java)
-* [`application.properties`](https://github.com/vippsas/vipps-streamlabs/blob/master/src/main/resources/application.properties)
+Vipps = Vipps API
 
-This was useful for Spring Boot:
-* [Getting started with Spring Boot](https://spring.io/guides/gs/spring-boot/).
-* [Validating Form Input](https://spring.io/guides/gs/validating-form-input/).
+Streamlabs = Streamlabs API
 
-# Screenshots
+Server = Spring Boot App
 
-The following screenshots show the complete flow, from displaying the donate button,
-via the Vipps payment, to showing the donation message on the stream.
+Frontend = React Express.js App
 
-## Streaming view
+Streamer = Human streaming on Twitch
+
+User = Human watching Streamer
+
 
 ![Twitch screenshot](images/0-streaming-view.png)
 
 This is the normal view of a stream on Twitch.
-Håkon is playing the addictive game [slither.io](http://slither.io).
 
-## Donate button
+
+## Donate button in streamers channel description
 
 ![Twitch screenshot](images/1-donate-button.png)
 
-The Vipps donate button is shown.
-Streamers are free to include whatever they want in their channel/stream description.
+The Vipps donate button is shown. Streamers are free to include whatever in their channel/stream description.
 
-## Landing page
+1. User is watching a streamer on Twitch
+2. User click "Donér med Vipps"-button
+
+## Frontend Landing page
 
 ![Twitch screenshot](images/2-landing-page.png)
 
 Clicking the Vipps button sends the user to this page.
-See the Vipps [design guidelines](https://github.com/vippsas/vipps-design-guidelines).
+
+3. User is redirected to frontend and is showed a form
+4. User fills in name, message to streamer and amount
+5. Frontend sends form data to server. Amount in USD is converted to NOK before sent to Vipps. 
+6. Server saves the donation in a DB and initiate payment with Vipps that responds with url that user need to approve in Vipps app
+
 
 ## Vipps landing page
 
 ![Twitch screenshot](images/3-vipps-landing-page.png)
 
-The standard Vipps landing page, where the user enters his/her phone number
-and confirms the donation.
+The standard Vipps landing page, where the user enters his/her phone number and confirms the donation.
+
+7. If user is on mobile, user is redirected to Vipps app to approve. If desktop, user will be redirected to a Vipps landing page first to approve it's phone number which will trigger a push notification on users phone.
 
 ## Payment request in the Vipps app
 
 ![Vipps screenshot](images/4-1-vipps-app-request.png)
 
-The payment request in the Vipps app. The user enters amount (10 kr)
-and text ("You are really good with streaming and such"), and presses "Send".
+The payment request in the Vipps app. 
+
+8. User approve or decline payment in Vipps app
+9. Vipps sends callback to server with order status (FAILED, SUCCESS, CANCELLED)
+10. Server then update the donation in the DB.
+11. If order status is SUCCESS server notify streamlabs with a POST request
 
 ## Payment confirmation in the Vipps app
 
@@ -144,6 +280,10 @@ The green "Betalt" bubble shows that the payment was successful.
 ![Twitch screenshot](images/4-3-success.png)
 
 Confirmation of the successful Vipps donation.
+12. User is redirected to /fallback/{orderId} in frontend
+13. Frontend then asks server what the status is for the donation. If server haven't recieved any callback from Vipps, it does a /getPaymentDetails request to Vipps before replying to the frontend.
+14. fallback page on frontend is rendered Based on FAILED, SUCCESS or CANCELLED in server response
+
 
 ## Donation shown on stream
 
@@ -154,5 +294,5 @@ Our backend received successful callback which trigger "/donations" POST-request
 
 # Questions?
 
-We're always happy to help, but please note that this is not an officially supported Vipps solution.
+We're always happy to help, but please not that this is not an officially supported Vipps solution.
 [Issues](issues) and [PRs](pulls) are welcome!

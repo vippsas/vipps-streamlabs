@@ -17,4 +17,11 @@ public class CustomerInfoDTO {
     public void setMobileNumber(String mobileNumber) {
         this.mobileNumber = mobileNumber;
     }
+
+    @Override
+    public String toString() {
+        return "CustomerInfoDTO{" +
+                "mobileNumber='" + mobileNumber + '\'' +
+                '}';
+    }
 }

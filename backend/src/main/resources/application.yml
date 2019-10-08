@@ -1,0 +1,28 @@
+spring:
+  jpa:
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+
+server:
+  port: ${PORT:8080}
+
+
+STREAMLABS_ACCESS_TOKEN: sZW6Hpr4FeDETTEerIKKeKorrektTAYOHzCqqbRBqGb
+STREAMLABS_CLIENT_ID: 123
+STREAMLABS_CLIENT_SECRET: 123
+VIPPS_CALLBACK_PREFIX: http://sharp-rain-backend-921.herokuapp.com/
+VIPPS_CLIENT_ID: 1cca1cae-f88c-4f09-a6fb-770b7b17a6e2
+VIPPS_CLIENT_SECRET: MmRIbkVCSzNHb0pXemdZOEhiMjA=
+VIPPS_FALLBACK_URL: http://sharp-rain-frontend-812.herokuapp.com/fallback
+VIPPS_MERCHANT_SERIAL_NUMBER: 50001
+VIPPS_OCP_APIM_SUBSCRIPTION_KEY_ACCESSTOKEN: efee30IKKEGYLDIG87faab3
+VIPPS_OCP_APIM_SUBSCRIPTION_KEY_ECOMMERCE: d85f2HEISANNSVE3616c646ccf
+TRANSACTION_TEXT: "Donasjon til Streamer"
+STREAMER_NAME: "Streamer"
+

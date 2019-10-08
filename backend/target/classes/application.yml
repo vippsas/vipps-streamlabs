@@ -1,0 +1,24 @@
+spring:
+  jpa:
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+
+server:
+  port: ${PORT:8080}
+
+STREAMLABS_ACCESS_TOKEN: sZW6Hpr4FeAkqjVZreg2iosvOTAYOHzCqqbRBqGb
+STREAMLABS_CLIENT_ID: 123
+STREAMLABS_CLIENT_SECRET: 123
+VIPPS_CLIENT_ID: 1cca1cae-f88c-4f09-a6fb-770b7b17a6e2
+VIPPS_CLIENT_SECRET: MmRIbkVCSzNHb0pXemdZOEhiMjA=
+VIPPS_MERCHANT_SERIAL_NUMBER: 565589
+VIPPS_OCP_APIM_SUBSCRIPTION_KEY_ACCESSTOKEN: efee3020a37644c49b39d25d387faab3
+VIPPS_OCP_APIM_SUBSCRIPTION_KEY_ECOMMERCE: d85f2e204ffe4486ab7873616c646ccf
+TRANSACTION_TEXT: "Donasjon til Emzia"
+STREAMER_NAME: "Emzia"

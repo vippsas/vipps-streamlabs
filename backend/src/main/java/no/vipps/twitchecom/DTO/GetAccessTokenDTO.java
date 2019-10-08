@@ -1,8 +1,12 @@
 package no.vipps.twitchecom.DTO;
 
+import no.vipps.twitchecom.controller.VippsController;
+
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.util.Objects;
+import java.util.logging.Logger;
 
 public class GetAccessTokenDTO {
     private String token_type;
@@ -12,6 +16,7 @@ public class GetAccessTokenDTO {
     private String not_before;
     private String resource;
     private String access_token;
+    Logger logger = Logger.getLogger(GetAccessTokenDTO.class.getName());
 
     public GetAccessTokenDTO(String token_type, String expires_in, String ext_expires_in, String expires_on, String not_before, String resource, String access_token) {
         this.token_type = token_type;
@@ -27,6 +32,13 @@ public class GetAccessTokenDTO {
     }
 
     public Boolean hasExired() {
+        logger.info("accesstoken response=" + this.toString());
+
+        if(expires_on == null || expires_in == null){
+            return false;
+        }
+
+
         LocalDateTime dateNow = Instant.ofEpochSecond(System.currentTimeMillis() / 1000).atZone(ZoneId.systemDefault()).toLocalDateTime();
         LocalDateTime dateExpire = Instant.ofEpochSecond(Long.valueOf(expires_on)).atZone(ZoneId.systemDefault()).toLocalDateTime();
 
@@ -87,5 +99,18 @@ public class GetAccessTokenDTO {
 
     public void setAccess_token(String access_token) {
         this.access_token = access_token;
+    }
+
+    @Override
+    public String toString() {
+        return "GetAccessTokenDTO{" +
+                "token_type='" + token_type + '\'' +
+                ", expires_in='" + expires_in + '\'' +
+                ", ext_expires_in='" + ext_expires_in + '\'' +
+                ", expires_on='" + expires_on + '\'' +
+                ", not_before='" + not_before + '\'' +
+                ", resource='" + resource + '\'' +
+                ", access_token='" + access_token + '\'' +
+                '}';
     }
 }
