@@ -45,4 +45,14 @@ public class MerchantInfoDTO {
     public void setApp(Boolean app) {
         isApp = app;
     }
+
+    @Override
+    public String toString() {
+        return "MerchantInfoDTO{" +
+                "merchantSerialNumber='" + merchantSerialNumber + '\'' +
+                ", callbackPrefix='" + callbackPrefix + '\'' +
+                ", fallBack='" + fallBack + '\'' +
+                ", isApp=" + isApp +
+                '}';
+    }
 }

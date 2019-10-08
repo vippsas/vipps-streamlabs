@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/vipps-streamlabs.iml" filepath="$PROJECT_DIR$/.idea/vipps-streamlabs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/twitch-ecom.iml" filepath="$PROJECT_DIR$/twitch-ecom.iml" />
     </modules>
   </component>
 </project>

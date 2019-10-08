@@ -1,4 +1,3 @@
-
 const path = require('path');
 
 module.exports = {
@@ -6,9 +5,6 @@ module.exports = {
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'public')
-    },
-    devServer: {
-        contentBase: './public'
     },
     module: {
         rules: [
@@ -18,10 +14,6 @@ module.exports = {
                 use: {
                     loader: "babel-loader"
                 }
-            },
-            {
-                test: /\.css$/,
-                use: ['style-loader', 'css-loader']
             }
         ]
     },
@@ -31,5 +23,4 @@ module.exports = {
             ['~']: path.resolve(__dirname + '/src')
         }
     }
-
 };

@@ -1,5 +1,7 @@
 package no.vipps.twitchecom.DTO;
 
+import no.vipps.twitchecom.TransactionStatus;
+
 import java.time.LocalDateTime;
 
 public class CallbackTransactionInfoStatus {
