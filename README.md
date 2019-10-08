@@ -6,6 +6,8 @@ A quick hack from an internal Vipps hackathon. No guarantees whatsoever!
 
 This hack is an integration between [Vipps](https://vipps.no) and [Streamlabs](https://streamlabs.com). 
 
+Read about why we made this "hack" in this article on [Medium](https://medium.com/@ariddervold/vipps-for-streamlabs-8133fb204f8e)
+
 
 This is a
 [Spring Boot](https://spring.io/projects/spring-boot)
