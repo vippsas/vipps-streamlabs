@@ -2,19 +2,19 @@
 
 ![Twitch screenshot](images/1-donate-button.png)
 
-A quick hack from an internal Vipps hackathon. No guarantees whatsoever! 
+A quick hack from an internal Vipps hackathon. No guarantees whatsoever!
 
-This hack is an integration between [Vipps](https://vipps.no) and [Streamlabs](https://streamlabs.com). 
+This hack is an integration between [Vipps](https://vipps.no) and [Streamlabs](https://streamlabs.com).
 
 Read about why we made this "hack" in this article on [Medium](https://medium.com/@ariddervold/vipps-for-streamlabs-8133fb204f8e)
 
 
 This is a
 [Spring Boot](https://spring.io/projects/spring-boot)
-Java application 
-and 
+Java application
+and
 [React Express.js](https://reactjs.org)
- which integrates with the
+which integrates with the
 [Vipps eCom v2 API](https://github.com/vippsas/vipps-ecom-api)
 and
 [Streamlabs API](https://dev.streamlabs.com/reference).
@@ -26,9 +26,10 @@ This was useful for us:
 
 # How to run this yourself on Heroku
 
-## Prerequisite
+## Prerequisites
+
 * [Vipps På Nett](https://vippsbedrift.no/signup/vippspanett/), which requires a company with a Norwegian organisation number. [Enkeltpersonforetak](https://www.altinn.no/starte-og-drive/starte/valg-av-organisasjonsform/enkeltpersonforetak/) is sufficient.
-* Accesstoken for you Streamlabs account (not necessary to test the flow. if you don't have it now fill in a rubberish string when asked to)
+* Accesstoken for your Streamlabs account (not necessary to test the flow. if you don't have it now fill in a gibberish string when asked to)
 
 ## Setup Heroku
 
@@ -51,10 +52,10 @@ git clone <repo>
 cd /vipps-streamlabs
 ```
 
-3. Replace image in application with your own
+3. Replace the image in application with your own
 
-
-Replace stream-profile-picture.png in /frontend/public/img with your own. Height and width should be equal for best apperance
+Replace `stream-profile-picture.png` in the `/frontend/public/img` directory
+with your own. Height and width should be equal for best appearance.
 
 4. Cd into backend folder and init git
 ```bash
@@ -64,20 +65,19 @@ Replace stream-profile-picture.png in /frontend/public/img with your own. Height
 ```bash
 ~/backend$ git init
 ```
-
-5. Create Heroku App for server. You need to keep the url for the herokuapp for further steps
+5. Create Heroku App for server. You need to keep the URL for the herokuapp for further steps
 ```bash
 ~/backend$ heroku create
 ```
 
-This will return a url for the created app back. We need this to configure our Server. In this case http://sharp-rain-backend-921.herokuapp.com/
+This will return a URL for the created app back. We need this to configure our Server.
+In this case http://sharp-rain-backend-921.herokuapp.com/
 
 ```bash
 Creating sharp-rain-backend-921... done, stack is heroku-18
 http://sharp-rain-backend-921.herokuapp.com/ | https://git.heroku.com/sharp-rain-backend-921.git
 Git remote heroku added
 ```
-
 
 6. Create a Heroko Postgres addon
 ```bash
@@ -92,13 +92,15 @@ Git remote heroku added
 ~/frontend$ git init
 ```
 
+8. Create Heroku App for the frontend. You need to keep the URL for the
+herokuapp for further steps
 
-8. Create Heroku App for the frontend. You need to keep the url for the herokuapp for further steps
 ```bash
 ~/frontend$ heroku create
 ```
 
-This will return a url for the created app back. We need this in later steps. In this case http://sharp-rain-frontend-812.herokuapp.com/
+This will return a URL for the created app back. We need this in later steps.
+In this case http://sharp-rain-frontend-812.herokuapp.com/
 
 ```bash
 Creating sharp-rain-frontend-812... done, stack is heroku-18
@@ -106,9 +108,10 @@ http://sharp-rain-frontend-812.herokuapp.com/ | https://git.heroku.com/sharp-rai
 Git remote heroku added
 ```
 
-9. Set env-variables in application.yaml which is located in /backend/src/main/resources
+9. Set environment variables in `application.yaml`, which is located in
+`/backend/src/main/resources`.
 
-- Transaction text is what that will be shown to user when approving payment in Vipps
+The `TRANSACTION_TEXT` is what that will be shown to user when approving payment in Vipps.
 
 ```bash
 STREAMLABS_ACCESS_TOKEN: sZW6Hpr4FeDETTEerIKKeKorrektTAYOHzCqqbRBqGb
@@ -126,11 +129,12 @@ STREAMER_NAME: "Streamer"
 
 ```
 
-10. Set SERVER_URL in frontend directory
+10. Set `SERVER_URL` in frontend directory
 
-In /frontend/src/server/routes/paymentApi.js in line 5, change variable SERVER_URL to the url for backend app. In this example: http://sharp-rain-backend-921.herokuapp.com/
+In `/frontend/src/server/routes/paymentApi.js` in line 5, change variable
+`SERVER_URL` to the URL for backend app. In this example: http://sharp-rain-backend-921.herokuapp.com/
 
-10. Deploy both apps to Heroku
+11. Deploy both apps to Heroku
 
 Deploy Server:
 ```bash
@@ -169,12 +173,16 @@ Deploy frontend
 
 ## Test your application
 
-When both apps is deployed succesfully, go to the frontend-url. From there you will be able to do donations.
+When both apps is deployed successfully, go to the frontend URL.
+From there you will be able to do donations.
 
 
-## Add init donate button to streamers channel description on Twith
+## Add init donate button to streamers channel description on Twitch
 
-In order to let people use your application and hopefully donate, you'll need to share link to the frontend application to them. You can share a link in cleartext or choose to place a button somewhere that will take the user to your application. For example in the streamers description on Twitch.
+In order to let people use your application and hopefully donate, you'll need
+to share link to the frontend application to them. You can share a link in
+cleartext or choose to place a button somewhere that will take the user to your
+application. For example in the streamer's description on Twitch.
 
 ### Vipps donate button
 
@@ -184,8 +192,8 @@ In order to let people use your application and hopefully donate, you'll need to
 
 ![Upload image to Twitch](images/twitch-upload-button-to-description.png)
 
-* Upload image that should be visible in the Twitch description to initiate Vipps donation
-* Change "Bilde lenker til" to your hostname / ip
+* Upload the image that should be visible in the Twitch description to initiate Vipps donation
+* Change "Bilde lenker til" to your hostname or IP address.
 
 
 # Technical documentation
@@ -197,34 +205,28 @@ In order to let people use your application and hopefully donate, you'll need to
 * Initiate payment: [`POST:/ecomm/v2/payments`](https://vippsas.github.io/vipps-ecom-api/#/Vipps%20eCom%20API/initiatePaymentV3UsingPOST)
 * Listen for callback on a successful, or unsuccesful, payment in the Vipps app ([`POST:[callbackPrefix]/v2/payments/{orderId}`](https://vippsas.github.io/vipps-ecom-api/#/Endpoints%20required%20by%20Vipps%20from%20the%20merchant/transactionUpdateCallbackForRegularPaymentUsingPOST)).
 
-**Please note**: This is NOT made to be a reference implementation. 
+**Please note**: This is NOT made to be a reference implementation.
 
 We make the code available here, in case it may be useful for others.
 [Issues](issues) and [PRs](pulls) are welcome!
 
 ## Streamlabs API
 
-* If a callback from Vipps API was successful, it triggered a POST request to
+* If a callback from Vipps API was successful, it triggered a `POST` request to
 the Streamlabs [`POST:/donations`](https://dev.streamlabs.com/reference#donations-1)
 endpoint. The streamer then has to configure in the admin panel how the donation will be
 shown in the stream.
 
 ## Flow
 
-### Actors:
+### Actors used below
 
-Vipps = Vipps API
-
-Streamlabs = Streamlabs API
-
-Server = Spring Boot App
-
-Frontend = React Express.js App
-
-Streamer = Human streaming on Twitch
-
-User = Human watching Streamer
-
+* Vipps = Vipps API
+* Streamlabs = Streamlabs API
+* Server = Spring Boot App
+* Frontend = React Express.js App
+* Streamer = Human streaming on Twitch
+* User = Human watching Streamer
 
 ![Twitch screenshot](images/0-streaming-view.png)
 
@@ -235,7 +237,8 @@ This is the normal view of a stream on Twitch.
 
 ![Twitch screenshot](images/1-donate-button.png)
 
-The Vipps donate button is shown. Streamers are free to include whatever in their channel/stream description.
+The Vipps donate button is shown. Streamers are free to include whatever in
+their channel/stream description.
 
 1. User is watching a streamer on Twitch
 2. User click "Donér med Vipps"-button
@@ -248,8 +251,8 @@ Clicking the Vipps button sends the user to this page.
 
 3. User is redirected to frontend and is showed a form
 4. User fills in name, message to streamer and amount
-5. Frontend sends form data to server. Amount in USD is converted to NOK before sent to Vipps. 
-6. Server saves the donation in a DB and initiate payment with Vipps that responds with url that user need to approve in Vipps app
+5. Frontend sends form data to server. Amount in USD is converted to NOK before sent to Vipps.
+6. Server saves the donation in a DB and initiate payment with Vipps that responds with URL that user need to approve in Vipps app
 
 
 ## Vipps landing page
@@ -264,12 +267,12 @@ The standard Vipps landing page, where the user enters his/her phone number and 
 
 ![Vipps screenshot](images/4-1-vipps-app-request.png)
 
-The payment request in the Vipps app. 
+The payment request in the Vipps app.
 
-8. User approve or decline payment in Vipps app
-9. Vipps sends callback to server with order status (FAILED, SUCCESS, CANCELLED)
+8. User approve or decline payment in the Vipps app
+9. Vipps sends callback to server with order status (`FAILED`, `SUCCESS`, `CANCELLED`)
 10. Server then update the donation in the DB.
-11. If order status is SUCCESS server notify streamlabs with a POST request
+11. If order status is SUCCESS server notify Streamlabs with a POST request
 
 ## Payment confirmation in the Vipps app
 
@@ -282,9 +285,10 @@ The green "Betalt" bubble shows that the payment was successful.
 ![Twitch screenshot](images/4-3-success.png)
 
 Confirmation of the successful Vipps donation.
+
 12. User is redirected to /fallback/{orderId} in frontend
 13. Frontend then asks server what the status is for the donation. If server haven't recieved any callback from Vipps, it does a /getPaymentDetails request to Vipps before replying to the frontend.
-14. fallback page on frontend is rendered Based on FAILED, SUCCESS or CANCELLED in server response
+14. fallback page on frontend is rendered Based on `FAILED`, `SUCCESS` or `CANCELLED` in server response
 
 
 ## Donation shown on stream
