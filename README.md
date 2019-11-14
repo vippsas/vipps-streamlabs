@@ -27,7 +27,7 @@ This was useful for us:
 # How to run this yourself on Heroku
 
 ## Prerequisite
-* [Vipps På Nett](https://vippsbedrift.no/signup/vippspanett/), which requires a company with a Norwegian organisation number. [Enkeltpersonforetak](https://www.altinn.no/starte-og-drive/starte/valg-av-organisasjonsform/enkeltpersonforetak/] is sufficient.
+* [Vipps På Nett](https://vippsbedrift.no/signup/vippspanett/), which requires a company with a Norwegian organisation number. [Enkeltpersonforetak](https://www.altinn.no/starte-og-drive/starte/valg-av-organisasjonsform/enkeltpersonforetak/) is sufficient.
 * Accesstoken for you Streamlabs account (not necessary to test the flow. if you don't have it now fill in a rubberish string when asked to)
 
 ## Setup Heroku
