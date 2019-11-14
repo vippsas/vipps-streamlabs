@@ -2,7 +2,10 @@
 
 ![Twitch screenshot](images/1-donate-button.png)
 
-A quick hack from an internal Vipps hackathon. No guarantees whatsoever!
+This is a quick hack from an internal Vipps hackathon. **No guarantees whatsoever!**
+We're always happy to help, but please not that this is not an officially supported 
+Vipps solution, and we have to prioritize customers using official products.
+Still:[Issues](issues) and [PRs](pulls) are welcome!
 
 This hack is an integration between [Vipps](https://vipps.no) and [Streamlabs](https://streamlabs.com).
 
