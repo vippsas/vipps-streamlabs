@@ -140,7 +140,7 @@ export class Home extends React.Component {
                                         <div className="cell small-12 medium-12 text-center align-self-middle">
                                             <img className="profile-image" alt="bannerVipps"
                                                  src="./img/stream-profile-picture.png"/>
-                                            <div className="bannerHeaderVipps">Donér til Emzia</div>
+                                            <div className="bannerHeaderVipps">Donér til -------- </div>
                                         </div>
                                     </div>
                                 </div>
