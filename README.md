@@ -55,10 +55,13 @@ git clone <repo>
 cd /vipps-streamlabs
 ```
 
-3. Replace the image in application with your own
+3. Replace the image and name of streamer in application with your own
 
 Replace `stream-profile-picture.png` in the `/frontend/public/img` directory
 with your own. Height and width should be equal for best appearance.
+
+Change text on line 143 in document `frontend/src/client/home.jsx` to reflect correct streamer name.
+
 
 4. Cd into backend folder and init git
 ```bash
