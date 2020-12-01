@@ -74,11 +74,10 @@ with your own. Height and width should be equal for best appearance.
 ```
 
 This will return a URL for the created app back. We need this to configure our Server.
-In this case http://sharp-rain-backend-921.herokuapp.com/
 
 ```bash
-Creating sharp-rain-backend-921... done, stack is heroku-18
-http://sharp-rain-backend-921.herokuapp.com/ | https://git.heroku.com/sharp-rain-backend-921.git
+Creating <app-name>... done, stack is heroku-18
+<heroku-app-url> | <heroku-git-url>
 Git remote heroku added
 ```
 
@@ -103,11 +102,10 @@ herokuapp for further steps
 ```
 
 This will return a URL for the created app back. We need this in later steps.
-In this case http://sharp-rain-frontend-812.herokuapp.com/
 
 ```bash
-Creating sharp-rain-frontend-812... done, stack is heroku-18
-http://sharp-rain-frontend-812.herokuapp.com/ | https://git.heroku.com/sharp-rain-frontend-812.git
+Creating <app-name>... done, stack is heroku-18
+<heroku-app-url> | <heroku-git-url>
 Git remote heroku added
 ```
 
@@ -117,16 +115,16 @@ Git remote heroku added
 The `TRANSACTION_TEXT` is what that will be shown to user when approving payment in Vipps.
 
 ```bash
-STREAMLABS_ACCESS_TOKEN: sZW6Hpr4FeDETTEerIKKeKorrektTAYOHzCqqbRBqGb
+STREAMLABS_ACCESS_TOKEN: Streamlabs access token
 STREAMLABS_CLIENT_ID: 123
 STREAMLABS_CLIENT_SECRET: 123x<t>
-VIPPS_CALLBACK_PREFIX: http://sharp-rain-backend-921.herokuapp.com/
-VIPPS_CLIENT_ID: 1cca1cae-f88c-4f09-a6fb-770b7b17a6e2
-VIPPS_CLIENT_SECRET: MmRIbkVCSzNHb0pXemdZOEhiMjA=
-VIPPS_FALLBACK_URL: http://sharp-rain-frontend-812.herokuapp.com/fallback
-VIPPS_MERCHANT_SERIAL_NUMBER: 50001
-VIPPS_OCP_APIM_SUBSCRIPTION_KEY_ACCESSTOKEN: efee30IKKEGYLDIG87faab3
-VIPPS_OCP_APIM_SUBSCRIPTION_KEY_ECOMMERCE: d85f2HEISANNSVE3616c646ccf
+VIPPS_CALLBACK_PREFIX: <heroku-app-url>
+VIPPS_CLIENT_ID: <Client-ID>
+VIPPS_CLIENT_SECRET: <Client-Secret>
+VIPPS_FALLBACK_URL: <heroku-app-url>/fallback
+VIPPS_MERCHANT_SERIAL_NUMBER: <MSN>
+VIPPS_OCP_APIM_SUBSCRIPTION_KEY_ACCESSTOKEN: <Sub-key>
+VIPPS_OCP_APIM_SUBSCRIPTION_KEY_ECOMMERCE: <Sub-key>
 TRANSACTION_TEXT: "Donasjon til Streamer"
 STREAMER_NAME: "Streamer"
 
@@ -135,7 +133,7 @@ STREAMER_NAME: "Streamer"
 10. Set `SERVER_URL` in frontend directory
 
 In `/frontend/src/server/routes/paymentApi.js` in line 5, change variable
-`SERVER_URL` to the URL for backend app. In this example: http://sharp-rain-backend-921.herokuapp.com/
+`SERVER_URL` to the URL for backend app. 
 
 11. Deploy both apps to Heroku
 
