@@ -1,1 +1,3 @@
-./idea
+.idea
+backend/target
+frontend/target

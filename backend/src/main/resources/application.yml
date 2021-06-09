@@ -1,0 +1,28 @@
+spring:
+  jpa:
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+
+server:
+  port: ${PORT:8080}
+
+
+STREAMLABS_ACCESS_TOKEN: <Streamlabs access token>
+STREAMLABS_CLIENT_ID: 123
+STREAMLABS_CLIENT_SECRET: 123
+VIPPS_CALLBACK_PREFIX: <heroku-app-url>
+VIPPS_CLIENT_ID: <Client-ID>
+VIPPS_CLIENT_SECRET: <Client-Secret>
+VIPPS_FALLBACK_URL: <heroku-app-url>/fallback
+VIPPS_MERCHANT_SERIAL_NUMBER: <MSN>
+VIPPS_OCP_APIM_SUBSCRIPTION_KEY_ACCESSTOKEN: <Sub-key>
+VIPPS_OCP_APIM_SUBSCRIPTION_KEY_ECOMMERCE: <Sub-key>
+TRANSACTION_TEXT: "Donasjon til Streamer"
+STREAMER_NAME: "Streamer"
+
